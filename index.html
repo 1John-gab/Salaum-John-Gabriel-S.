@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>John Gabriel</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f6fb;
+    }
+
+    .wrapper {
+      margin: 0 100px;
+      flex: 1;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 2px solid black;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .logo span {
+      font-size: 26px;
+      margin-left: 10px;
+    }
+
+    nav {
+      display: flex;
+      gap: 60px;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 17px;
+      color: #000;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+
+    nav a:hover {
+      color: #007BFF;
+      text-decoration: underline;
+    }
+
+    nav a.active {
+      border-bottom: 3px solid #007BFF;
+      padding-bottom: 4px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      top: 30px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #000;
+      margin: 4px 0;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      background-color: #f3f6fb;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .mobile-nav a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #000;
+    }
+
+    main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 80px;
+      flex-wrap: wrap;
+    }
+
+    .intro {
+      max-width: 800px;
+      text-align: left;
+    }
+
+    .intro h1 {
+      font-size: 150px;
+      margin: 0;
+    }
+
+    .intro p {
+      font-size: 22px;
+      margin-top: 15px;
+      color: #444;
+    }
+
+    .intro button {
+      margin-top: 30px;
+	  margin-bottom: 105px;
+      padding: 12px 28px;
+      font-size: 18px;
+      background-color: transparent;
+      border: 2px solid #000;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s ease-in-out;
+    }
+
+    .intro button a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .intro button:hover {
+      background-color: #007BFF;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .profile-photo img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 50%;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .profile-photo img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+      border: 3px solid black;
+    }
+
+    .site-footer {
+      background-color: #2c333d;
+      color: white;
+      padding: 30px 0;
+      width: 100%;
+    }
+
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .site-footer a {
+      color: #a3bdcc;
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      .wrapper {
+        margin: 0 15px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav.show {
+        display: flex;
+      }
+
+      main {
+        flex-direction: column;
+        padding: 40px 20px;
+      }
+
+      .intro {
+        text-align: center;
+      }
+
+      .intro h1 {
+        font-size: 48px;
+      }
+
+      .profile-photo img {
+        max-width: 250px;
+        margin-bottom: 20px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+  <header>
+    <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
+      <img src="https://bit.ly/428eggs" alt="Logo" width="50" height="50" />
+      <span>JOHN<br>GABRIEL</span>
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="resume.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="hamburger" onclick="document.querySelector('.mobile-nav').classList.toggle('show')">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="mobile-nav">
+      <a href="resume.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="intro">
+      <h1>Hello, I’m John!</h1>
+      <p>Student / Programmer / Web Developer</p>
+      <button><a href="contact.html">Contact me</a></button>
+    </div>
+    <div class="profile-photo">
+      <img src="https://bit.ly/3G27Ree" alt="John Gabriel" />
+    </div>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div>
+      <strong>Follow Me</strong><br />
+      <a href="https://www.facebook.com/gabo.salaum.9" target="_blank">Facebook</a>
+    </div>
+    <div>
+      <strong>Email</strong><br />
+      <a href="mailto:jssalaumjohngabriel0141@gmail.com">jssalaumjohngabriel0141@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

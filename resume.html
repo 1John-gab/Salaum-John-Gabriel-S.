@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | John Gabriel</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f6fb;
+    }
+
+    .wrapper {
+      margin: 0 100px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 2px solid black;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .logo span {
+      font-size: 26px;
+      margin-left: 10px;
+    }
+
+    nav {
+      display: flex;
+      gap: 60px;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 17px;
+      color: #000;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+
+    nav a:hover {
+      color: #007BFF;
+      text-decoration: underline;
+    }
+
+    nav a.active {
+      border-bottom: 3px solid #007BFF;
+      padding-bottom: 4px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      top: 30px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #000;
+      margin: 4px 0;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      background-color: #f3f6fb;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .mobile-nav a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .about-container {
+      display: flex;
+      gap: 90px;
+      align-items: flex-start;
+      padding: 60px 20px;
+      max-width: 1800px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+      height: 500px;
+      background-color: #ddd;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .about-image:hover {
+      transform: scale(1.03);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 100px;
+      font-size: 18px;
+      line-height: 1.5;
+      color: #222;
+    }
+
+    .about-text h1 {
+      font-size: 42px;
+      margin-bottom: 9px;
+      font-weight: bold;
+    }
+
+    .about-text p {
+      margin-bottom: 10px;
+    }
+
+    .contact-details {
+      margin-top: 50px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .contact-details strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .connect-message {
+      margin-top: 30px;
+      font-size: 16px;
+      font-style: italic;
+      color: #333;
+    }
+
+    footer {
+      background-color: #2c333d;
+      color: white;
+      padding: 30px 0;
+      margin-top: 60px;
+    }
+
+    .page-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      text-align: center;
+      margin: 0 100px;
+    }
+
+    footer a {
+      color: #a3bdcc;
+      text-decoration: none;
+    }
+	.footer-content {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .wrapper {
+        margin: 0 15px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav.show {
+        display: flex;
+      }
+
+      .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 10px;
+      }
+
+      .about-image {
+        width: 250px;
+        height: 250px;
+      }
+
+      .about-text {
+        text-align: left;
+        font-size: 16px;
+      }
+
+      .about-text h1 {
+        font-size: 32px;
+        text-align: center;
+      }
+
+      .page-container {
+        flex-direction: column;
+        margin: 0 15px;
+        gap: 20px;
+      }
+
+      footer div {
+        width: 100%;
+      }
+	  
+	  .footer-content {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <header>
+      <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
+        <img src="https://bit.ly/428eggs" alt="Logo" width="50" height="50" />
+        <span>JOHN<br>GABRIEL</span>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="resume.html" class="active">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="hamburger" onclick="document.querySelector('.mobile-nav').classList.toggle('show')">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="mobile-nav">
+        <a href="resume.html" class="active">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </header>
+
+    <section class="about-container">
+      <div class="about-image">
+        <img src="https://bit.ly/3GeviAS" alt="John Gabriel">
+      </div>
+
+      <div class="about-text">
+        <h1>Hello, I’m John!</h1>
+        <p>A 19-year-old aspiring Information Technology professional with a passion for problem-solving, creativity, and innovation.</p>
+        <p>Currently pursuing a Bachelor of Science in Information Technology, I am building a strong foundation in programming, system development, and emerging technologies.</p>
+        <p>I describe myself as a meek and focused individual, driven to continuously learn and grow. I specialize in creating efficient, user-friendly solutions, blending technical expertise with a collaborative mindset.</p>
+        <p>Beyond academics, I am a musician who plays guitar for worship services, bringing passion and precision to every note. This artistic side fuels my creativity and helps me think outside the box.</p>
+        <p>With a keen interest in web development, software design, and problem-solving, I aim to contribute to projects that make a difference.</p>
+        <div class="connect-message">Let’s connect and bring ideas to life!</div>
+        <div class="contact-details">
+          <strong>Email:</strong> jssalaumjohngabrielqc0141@gmail.com<br>
+          <strong>Number:</strong> 091234567891
+        </div>
+      </div>
+    </section>
+  </div>
+
+ <footer class="site-footer">
+  <div class="footer-content">
+    <div>
+      <strong>Follow Me</strong><br />
+      <a href="https://www.facebook.com/gabo.salaum.9" target="_blank">Facebook</a>
+    </div>
+    <div>
+      <strong>Email</strong><br />
+      <a href="mailto:jssalaumjohngabriel0141@gmail.com">jssalaumjohngabriel0141@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
